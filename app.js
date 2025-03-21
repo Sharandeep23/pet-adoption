@@ -28,7 +28,7 @@ async function petsArea() {
       new Date().getFullYear() - birthYear
     } years old`;
     petCardClone.querySelector('img').src = photo;
-    petCardClone.querySelector('img').alt = `A ${name}`;
+    petCardClone.querySelector('img').alt = `A ${species}`;
 
     wrapper.append(petCardClone);
   }
