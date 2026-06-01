@@ -17,7 +17,7 @@ async function petsArea() {
     'https://learnwebcode.github.io/bootcamp-pet-data/pets.json',
   );
   const petsDataArr = await petsResponseObj.json();
-  for (const { name, description, birthYear, photo, species } of petsDataArr) {
+  for (let { name, description, birthYear, photo, species } of petsDataArr) {
     const petCardClone = document
       .querySelector('#pet-card-template')
       .content.cloneNode(true);
@@ -26,8 +26,11 @@ async function petsArea() {
     petCardClone.querySelector('.pet-description').textContent = description;
     petCardClone.querySelector('.pet-age').textContent =
       createAgeText(birthYear);
+
+    if (!photo) photo = '/images/fallback.jpg';
+
     petCardClone.querySelector('img').src = photo;
-    petCardClone.querySelector('img').alt = `A ${species}`;
+    petCardClone.querySelector('img').alt = `A ${species} named ${name}.`;
 
     wrapper.append(petCardClone);
   }
