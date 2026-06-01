@@ -2,7 +2,7 @@ const wrapper = document.createDocumentFragment();
 
 async function start() {
   const weatherResponseObj = await fetch(
-    'https://api.weather.gov/gridpoints/MFL/110,50/forecast'
+    'https://api.weather.gov/gridpoints/MFL/110,50/forecast',
   );
   const weatherDataObj = await weatherResponseObj.json();
 
@@ -14,7 +14,7 @@ start();
 
 async function petsArea() {
   const petsResponseObj = await fetch(
-    'https://learnwebcode.github.io/bootcamp-pet-data/pets.json'
+    'https://learnwebcode.github.io/bootcamp-pet-data/pets.json',
   );
   const petsDataArr = await petsResponseObj.json();
   for (const { name, description, birthYear, photo, species } of petsDataArr) {
@@ -24,9 +24,8 @@ async function petsArea() {
 
     petCardClone.querySelector('h3').textContent = name;
     petCardClone.querySelector('.pet-description').textContent = description;
-    petCardClone.querySelector('.pet-age').textContent = `${
-      new Date().getFullYear() - birthYear
-    } years old`;
+    petCardClone.querySelector('.pet-age').textContent =
+      createAgeText(birthYear);
     petCardClone.querySelector('img').src = photo;
     petCardClone.querySelector('img').alt = `A ${species}`;
 
@@ -36,3 +35,13 @@ async function petsArea() {
 }
 
 petsArea();
+
+function createAgeText(birthYear) {
+  const currentYear = new Date().getFullYear();
+  const age = currentYear - birthYear;
+
+  if (age == 1) return '1 year old';
+  if (age == 0) return 'Less than a year old';
+
+  return `${age} years old`;
+}
