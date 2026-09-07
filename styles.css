@@ -15,7 +15,7 @@ body {
 
 .top-section-wrapper {
   overflow: hidden;
-  background-color: #001D37;
+  background-color: #001d37;
   padding-left: 16px;
   padding-right: 16px;
 }
@@ -56,18 +56,21 @@ body {
   display: inline-block;
   font-size: 1.125rem;
   font-weight: 600;
-  background-color: #475AFF;
-  border: 2px solid #475AFF;
-  color: #FFF;
+  background-color: #475aff;
+  border: 2px solid #475aff;
+  color: #fff;
   text-decoration: none;
   padding: 13px 25px;
   border-radius: 1000px;
-  transition: background-color .3s ease-out, border .3s ease-out, color .3s ease-out;
+  transition:
+    background-color 0.3s ease-out,
+    border 0.3s ease-out,
+    color 0.3s ease-out;
 }
 
 .our-btn:hover {
-  background-color: #2E40E2;
-  border: 2px solid #2E40E2;
+  background-color: #2e40e2;
+  border: 2px solid #2e40e2;
 }
 
 .our-btn--outline {
@@ -77,7 +80,7 @@ body {
 
 .our-btn--outline:hover {
   background-color: white;
-  color: #475AFF;
+  color: #475aff;
   border: 2px solid white;
 }
 
@@ -87,7 +90,7 @@ body {
 
 .intro-feature {
   padding: 33px 25px;
-  border: 1px solid rgba(255, 255, 255, .24);
+  border: 1px solid rgba(255, 255, 255, 0.24);
 }
 
 .intro-feature p {
@@ -121,8 +124,8 @@ body {
 .circle {
   width: 617px;
   height: 617px;
-  background: #D660FF;
-  opacity: .85;
+  background: #d660ff;
+  opacity: 0.85;
   border-radius: 50%;
   filter: blur(150px);
   position: absolute;
@@ -133,8 +136,8 @@ body {
 .circle-two {
   width: 617px;
   height: 617px;
-  background: #6079FF;
-  opacity: .85;
+  background: #6079ff;
+  opacity: 0.85;
   border-radius: 50%;
   filter: blur(150px);
   position: absolute;
@@ -143,7 +146,7 @@ body {
 }
 
 .page-section {
-  background-color: #FFF;
+  background-color: #fff;
   padding: 70px 16px;
 }
 
@@ -159,7 +162,7 @@ body {
 }
 
 .pet-filter {
-  color: #9F9F9F;
+  color: #9f9f9f;
   font-size: 1.15rem;
 }
 
@@ -168,12 +171,23 @@ body {
   border: none;
   font-family: 'Source Sans 3', sans-serif;
   font-size: 1.15rem;
-  color: #9F9F9F;
+  color: #9f9f9f;
+  cursor: pointer;
+}
+
+.pet-filter button:hover {
+  color: #7d7d7d;
+}
+
+.pet-filter .active,
+.pet-filter .active:hover {
+  color: #475aff;
+  text-decoration: underline;
 }
 
 .site-footer p {
   text-align: center;
-  color: #A6A6A6;
+  color: #a6a6a6;
   font-size: 0.875rem;
   margin: 0;
   padding: 0 0 65px 0;
@@ -191,7 +205,7 @@ body {
   display: grid;
   grid-template-columns: 165px 1fr;
   border-radius: 20px;
-  border: 1px solid #F3F3F3;
+  border: 1px solid #f3f3f3;
   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.08);
 }
 
@@ -218,15 +232,15 @@ body {
 }
 
 .pet-description {
-  font-size: .9rem;
+  font-size: 0.9rem;
   margin: 0 0 1rem 0;
   color: #626262;
   line-height: 150%;
 }
 
 .pet-age {
-  color: #A2A2A2;
-  font-size: .85rem;
+  color: #a2a2a2;
+  font-size: 0.85rem;
   margin: 0;
 }
 

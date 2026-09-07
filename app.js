@@ -22,6 +22,8 @@ async function petsArea() {
       .querySelector('#pet-card-template')
       .content.cloneNode(true);
 
+    petCardClone.querySelector('.pet-card').dataset.species = species;
+
     petCardClone.querySelector('h3').textContent = name;
     petCardClone.querySelector('.pet-description').textContent = description;
     petCardClone.querySelector('.pet-age').textContent =
@@ -47,4 +49,29 @@ function createAgeText(birthYear) {
   if (age == 0) return 'Less than a year old';
 
   return `${age} years old`;
+}
+
+// pet filter button code
+const allButtons = document.querySelectorAll('.pet-filter button');
+
+allButtons.forEach((el) => {
+  el.addEventListener('click', handleButtonClick);
+});
+
+function handleButtonClick(e) {
+  // remove active class from  all buttons
+  allButtons.forEach((el) => el.classList.remove('active'));
+
+  // add active class to the specific button that just got clicked
+  e.target.classList.add('active');
+
+  // actually filter the pets down below
+  const currentFilter = e.target.dataset.filter;
+  document.querySelectorAll('.pet-card').forEach((el) => {
+    if (currentFilter == el.dataset.species || currentFilter == 'all') {
+      el.style.display = 'grid';
+    } else {
+      el.style.display = 'none';
+    }
+  });
 }
